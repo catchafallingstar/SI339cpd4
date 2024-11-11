@@ -1,0 +1,408 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    background-color: white;
+    color: var(--title-color);
+    text-align: center;
+    padding: 5%;
+    background-color: var(--title-back-color);
+    padding: 20px auto;
+    font-size: large;
+}
+
+body {
+    background-color: var(--body-back-color);
+}
+
+.maintitle {
+    background-color: var(--title-back-color);
+}
+
+.maintitle img {
+    justify-self: center;
+    display: block;
+    justify-content: center;
+    justify-items: center;
+    border-radius: 25px;
+    margin-bottom: 30px;
+    height:8em;
+}
+
+
+/* default light */
+:root {
+    --body-back-color: #c1e8ff;
+    --each-box-color: white;
+    --title-color: #021024;
+    --title-back-color: white;
+    --icon: black;
+}
+
+.meet-grid {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px auto;
+    max-width: 100%;
+    /* Ensures the grid does not exceed the container width */
+}
+
+.meet-container {
+    flex: 1 1 30%;
+    /* Adjusts the width to 30% of the parent container */
+    max-width: 30%;
+    /* Ensures the box does not exceed 30% width */
+    min-width: 250px;
+    /* Minimum width before wrapping */
+    margin-bottom: 5px;
+    /* Smaller margin by default */
+    box-sizing: border-box;
+    transition: margin 0.3s ease;
+    /* Smooth transition for margin */
+    justify-items: center;
+    
+}
+
+.collapsible {
+    background-color: var(--each-box-color);
+    cursor: pointer;
+    margin: 10px;
+    border: 1px solid #ddd;
+    width: 200px;
+    /* Full width of the .meet-container */
+    height: 200px;
+    text-align: center;
+    justify-items: center;
+    outline: none;
+    font-size: 18px;
+    transition: background-color 0.3s;
+    border-radius: 50px;
+}
+
+.collapsible img {
+    width: 60%;
+    padding-top: 0px;
+    border-radius: 50px;
+    justify-self: center;
+}
+
+.collapsible p {
+    padding-top: 25px;
+    padding-bottom: 0;
+    color: var(--box-text-color);
+    justify-content: center;
+}
+
+.collapsible:hover {
+    background-color: #ddd;
+}
+
+.content {
+    display: none;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.content li {
+    width: 200px;
+    /* Full width of the .meet-container */
+    height: auto;
+    padding: 15px 5px;
+    background-color: #ffffff;
+    border-radius: 0;
+    border: 1px solid #ddd;
+    margin-bottom: 0;
+    text-align: center;
+    transition: background-color 0.3s, transform 0.2s, ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover effect for list items */
+.content li:hover {
+    background-color: #f1f1f1ad;
+    transform: translateY(-2px);
+}
+
+/* Styling for the anchor links */
+.content li a {
+    text-decoration: wavy;
+    color: #052659;
+    font-size: 16px;
+}
+
+.content li:nth-child(odd) a {
+    color: white;
+}
+
+.content li:nth-child(odd) {
+    background-color: #375A86;
+    color: white;
+}
+
+.content li a:hover {
+    text-decoration: underline;
+    color: #5483b3;
+}
+
+.content li:nth-child(odd) a:hover {
+    color: #c1e8ff;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+}
+
+.menu-icon {
+    font-size: 30px;
+    cursor: pointer;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+    color: var(--icon);
+}
+
+/* Navigation styling */
+nav {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    /* Initially hidden to the left */
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    overflow-x: hidden;
+    transition: left 0.3s;
+    z-index: 999;
+    /* Ensures it overlays the content */
+}
+
+nav ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    padding-top: 60px;
+    /* Space for the menu icon */
+}
+
+nav li {
+    padding: 15px 20px;
+}
+
+nav li a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    font-size: 18px;
+}
+
+nav li a:hover {
+    background-color: #575757;
+}
+
+/* Active state for showing the nav */
+nav.active {
+    left: 0;
+    /* Moves the nav in from the left */
+}
+
+footer a {
+    color: white !important;
+}
+
+/* Styling for the featured image */
+.featured-photo {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+.featured-photo img {
+    width: 100%; /* Adjust this as needed */
+    height: auto;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+   
+  
+   
+}
+.gallery-dots {
+    text-align: center;
+    margin-top: 2px;
+}
+
+.dot {
+    height: 5px;
+    width: 5px;
+    margin: 0 2px;
+    display: inline-block;
+    border-radius: 50%;
+    background-color: #bbb;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #333;
+}
+
+
+@media screen {
+    nav ul{
+        flex-direction: column;
+    }
+    
+}
+/* Expanded state for laptop version */
+@media screen and (min-width: 1024px) {
+    .featured-photo img {
+        width: 600px; /* Adjust this as needed */
+        height: auto;
+       
+    }
+    .maintitle {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    .maintitle img {
+        height: 7.25em;
+        width: auto;
+        padding-top: 0.5rem;
+        padding-right: 1rem;
+    }
+
+    header {
+        padding: 0;
+    }
+
+    body {
+        padding: 0;
+    }
+
+    nav {
+        position: sticky;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        background-color: #333;
+        transition: none;
+    }
+
+    nav ul {
+        flex-direction: row;
+        padding: 0;
+        padding-top: 0;
+    }
+
+    nav li {
+        padding: 5px 2.5px;
+    }
+
+    nav li a {
+        font-size: small;
+    }
+
+    .menu-icon {
+        display: none;
+    }
+
+    .meet-container {
+        display: flex;
+        flex-direction: column; /* Stack the title and content vertically */
+        align-items: stretch;
+        justify-content:stretch;
+        padding: 0px;
+        border: 2px solid #000000; /* Optional: to visually separate each container */
+        border-radius: 20px;
+        margin: 10px;/* Spacing between meet containers */
+        background-color: var(--each-box-color);
+    }
+
+    .collapsible {
+        display: flex;
+        align-items: center;
+        background-color: var(--each-box-color);
+        justify-content: space-between; /* Ensure the image is on the right */
+        width: 100%;
+        margin:0; /* Space below the title */
+        padding: 10px;
+        border: none; /* Remove border */
+        border-radius: 20px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        cursor: default; /* No pointer cursor */
+    }
+
+    .collapsible p {
+        margin: 0;
+        padding:0;
+        flex-grow: 1; /* Make the text take available space */
+    }
+
+    .collapsible img {
+        width: 100px; /* Adjust as needed */
+        height: auto;
+        border-radius: 10px;
+        margin-left: 15px; /* Space between the title and image */
+    }
+
+    .content {
+        display: block; /* Ensure the content is displayed */
+        width: 100%; /* Full width */
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    .content li {
+        width: auto;
+        text-align: left;
+        margin-bottom: 0px;
+        padding-left: 20px;
+        padding-right: 20px;
+        height:auto;
+        background-color: var(--each-box-color); /* Background color for items */
+        border-radius: 0px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    }
+    .content li:last-child{
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+      box-shadow: none;
+      border: none;
+    }
+    
+}
+/* for the hidden image */
+#hidden{ 
+    display: none;
+}
+
+
+@media (prefers-color-scheme:dark) {
+    :root {
+        --body-back-color: #052659;
+        --each-box-color: #C1e8ff;
+        --box-text-color: #021024;
+        --title-back-color: #021024;
+        --title-color: white;
+        --icon: white;
+    }
+}
