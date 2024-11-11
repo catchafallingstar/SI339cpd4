@@ -211,6 +211,7 @@ nav li a {
 
 nav li a:hover {
     background-color: #575757;
+    color:#ddd;
 }
 
 /* Active state for showing the nav */
@@ -319,7 +320,9 @@ footer a {
     nav li a {
         font-size: small;
     }
-
+    nav li a:hover{
+        outline: auto;
+    }
     .menu-icon {
         display: none;
     }
