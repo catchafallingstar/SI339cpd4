@@ -238,13 +238,9 @@ footer a {
 }
 
 
-
-  
-  
-  
-/* footer{
-    background-color: black;
-    color: white;
-    text-align: center;
-    padding: 20px;
-} */
+@media (prefers-reduced-motion) {
+  img{
+    transition:none !important;
+  }
+    
+}

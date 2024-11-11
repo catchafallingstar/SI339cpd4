@@ -406,3 +406,18 @@ footer a {
         --icon: white;
     }
 }
+
+    @media (prefers-reduced-motion) {
+        .content {
+            display: flex !important;
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+        }
+        .meet-container {
+          
+            transition: none !important;  
+        }
+        
+        
+    }
